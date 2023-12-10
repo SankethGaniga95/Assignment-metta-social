@@ -48,7 +48,7 @@ export const CountrySearch = () => {
         <Flex>
         <InputGroup 
         width="35%"
-        ml="32%"
+        ml="30%"
         mt={35}
         p={4}
          >
