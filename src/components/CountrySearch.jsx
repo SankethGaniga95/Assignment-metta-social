@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { CountryCard } from './CountryCard';
-import { Box, Button, Flex, Grid, Heading, Input, Spinner, Text, useToast } from '@chakra-ui/react';
-
+import { Box, Button, Flex, Grid, Heading, Input, InputGroup, InputLeftElement, Spinner, Text, useToast } from '@chakra-ui/react';
+import { SearchIcon } from "@chakra-ui/icons";
 
 export const CountrySearch = () => {
     const [search,setSearch]=useState("")
@@ -46,16 +46,22 @@ export const CountrySearch = () => {
         <Box>
         <Heading mt={50} color={'blue.500'} ml={"33%"} fontWeight={"500"}>Search Country By Currency</Heading>
         <Flex>
-        <Input 
+        <InputGroup 
+        width="35%"
+        ml="32%"
+        mt={35}
+        p={4}
+         >
+        <InputLeftElement pointerEvents='none' ml={4} mt={4} color="gray.500">
+        <SearchIcon/>
+        </InputLeftElement>
+         <Input 
         type="text"
-        placeholder='Search By currency INR, EUR'
+        placeholder='Search by Currency INR, EUR'
         value={search} 
         onChange={(e)=>setSearch(e.target.value)}
-        width="35%"
-        ml="30%"
-        mt={50}
-        mr={2}
-        p={4} />
+        />
+        </InputGroup>
         <Button onClick={handleClick} mt={50} backgroundColor={'blue.500'} color={'white'}>Search</Button>
         </Flex>
         </Box>
